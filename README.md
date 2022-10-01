@@ -122,7 +122,7 @@ sudo apt install iperf3
 
 2. Kernel parameter changing
 
- 	Firstly,  load into **sysconf file** using cmd:
+​	Firstly,  load into **sysconf file** using cmd:
 
 ```bash
 sudo nano /etc/sysctl.conf
@@ -175,7 +175,7 @@ For this experiment, I tested from the virtual machine of my laptop to public ip
 
 | Parameter           | 1s   | 2s   | 3s   | 4s   | 5s   | 6s   | 7s   | 8s   | 9s   | 10s  |
 | ------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| Cwnd (MBytes)       | 6.58 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 |
+| Cwnd (MBytes)       | 7.29 | 9.39 | 10.1 | 10.3 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 | 5.38 |
 | Bitrate (Mbits/sec) | 76.6 | 200  | 230  | 253  | 241  | 241  | 231  | 230  | 242  | 230  |
 | Retr                | 0    | 187  | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    |
 
@@ -222,4 +222,26 @@ For this experiment, I tested from the virtual machine of my laptop to public ip
 | Cwnd (kBytes)       | 237  | 145  | 163  | 154  | 145  | 145  | 148  | 145  | 171  | 148  |
 | Bitrate (Mbits/sec) | 63.7 | 126  | 161  | 211  | 205  | 211  | 205  | 217  | 179  | 162  |
 | Retr                | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    |
+
+Throughput of wired and wireless connections among different variances
+
+<img src="images/throughput.png" alt="avatar" style="zoom:100%;" />
+
+ 
+
+<img src="images/Cwnd.png" alt="avatar" style="zoom:100%;" />
+
+<h4>TCP packet delay considering all variance flavors</h4>
+
+For this experiment, we need to get the packet delay message of each TCP flavour. I used cmd 
+
+```bash
+iperf3 -c ping.online.net -p 5203 -J -t 20
+```
+
+This means the experiment is ran for 20s and the output is in Json format. In the Json file, the average and variance of **RTT**s for each second is shown. Based on this parameter, we can see the packet delay changes for each TCP variance.
+
+I ran this experiment for all four variances through the wired network interface of the VM.
+
+ 
 
