@@ -122,7 +122,7 @@ sudo apt install iperf3
 
 2. Kernel parameter changing
 
-​	Firstly,  load into **sysconf file** using cmd:
+​	Firsudo stly,  load into **sysconf file** using cmd:
 
 ```bash
 sudo nano /etc/sysctl.conf
@@ -276,7 +276,7 @@ I ran this experiment for all four flavors through the wired network interface o
 
 Packet delay changes for different flavors and conrresponding CWnds
 
- 													<img src="images/delay.png" alt="avatar" style="zoom:100%;" />
+<img src="images/delay.png" alt="avatar" style="zoom:100%;" />
 
 <img src="images/cwnd_delay.png" alt="avatar" style="zoom:100%;" />
 
@@ -302,7 +302,7 @@ The BBR delay and throughput figure is shown as follows.
 
 ![bbr_throughput](images/bbr_throughput.png)
 
-Loss-based congestion control fills buffer, Achieves full throughput, but induces queuing delay. TCP BBR doesn’t fill buffer, Estimates bottleneck bandwidth and sends at that rate. TCP BBR operates at the BDP, Also tries to estimate what link RTT is without queueing delay.
+Loss-based congestion control fills buffer, achieves full throughput, but induces queuing delay. TCP BBR doesn’t fill buffer, estimates bottleneck bandwidth and sends at that rate. TCP BBR operates at the BDP, Also tries to estimate what link RTT is without queueing delay.
 
 <h4>Wireshark experiment</h4>
 
