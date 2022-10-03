@@ -243,11 +243,11 @@ Throughput of wired and wireless connections among different variances and the c
 
 **Analysis**
 
-* **Wired vs Wireless**
+* Wired vs Wireless
 
 ​		If we see the figure straight forwardly, we may feel that wired TCP variances have generally higher throughputs than wireless ones. However, for the environment settings of my experiment, it is not fair to do this comparison since wired connections are using bridged network interface (VM is a peer in the subnet of the host) and wireless connections are using shared network (VM network is bounded by the host's TCP protocol).  The wireless one needs to pass the host's network to send and recieve packets, this makes the wireless connection influenced by the host network a lot.
 
-* **Flavor throughputs comparision**
+* Flavor throughputs comparision
 
 ​		For variance comparison, we only consider wired connections. The one with the highest throughput is BBR, whereas the lowest is Vegas.  
 
@@ -255,7 +255,7 @@ Throughput of wired and wireless connections among different variances and the c
 
 ​		For the reason why BBR becomes the highest is that BBR will not over-react for packet loss. After ProbeBW (measuring bandwidth) stage, the CWnd will not change too much even loss packets.  It targets at occupying BDP (Bandwidth Delay Product = max BW $\times$ Min RTT), which is the maximum capacity the network can handle.  Cubic and Reno are both packet-loss based. When packet loss happened, they will decrease their Cwnds. 
 
-* **Packet loss and Cwnd**
+* Packet loss and Cwnd
 
   The three vertical lines in blue, red and green show how the CWnd changes of Cubic, Reno and BBR respectively due to packet loss. For Cubic and Reno, after the first packet loss happens, **ssthresh** is set. For BBR, it does not have a lot of affect since it is not loss-based congestion control.
 
@@ -283,14 +283,13 @@ Packet delay changes for different flavors and conrresponding CWnds
 <h4
 
 
-
 **Analysis**
 
-* **Delay among flavors**
+* Delay among flavors
 
   From the figure, we can see that Vegas has the lowest delay among all variances, whereas Cubic, BBR and Reno have comparable delay. For more details, we can see that BBR has larger variance because of the significant changes of CWnd. 
 
-* **Cwnd changes among different flavors**
+* Cwnd changes among different flavors
 
 ​		From the figure, we can see that BBR has the highest CWnd on average. However at about 11s, there is a dramatically decrease of window size. This is basically because that BBR does not react to packet loss immediatly. However, when packet loss rate comes to a threshold , BBR will "accidentally" react to the packet loss by shrinking the window size.
 
