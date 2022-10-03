@@ -280,9 +280,6 @@ Packet delay changes for different flavors and conrresponding CWnds
 
 <img src="images/cwnd_delay.png" alt="avatar" style="zoom:100%;" />
 
-<h4
-
-
 **Analysis**
 
 * Delay among flavors
