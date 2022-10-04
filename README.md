@@ -305,7 +305,7 @@ The BBR delay and throughput figure is shown as follows.
 Loss-based congestion control fills buffer, achieves full throughput, but induces queuing delay. TCP BBR doesn’t fill buffer, estimates bottleneck bandwidth and sends at that rate. TCP BBR operates at the BDP, Also tries to estimate what link RTT is without queueing delay.
 
 <h4>Wireshark experiment</h4>
-I also used **wireshark** for catching tcp packets. Since **iperf** is giving analysis per second, the packet based analysis will be much more precise.
+I also used wireshark for catching tcp packets. Since iperf is giving analysis per second, the packet based analysis will be much more precise.
 
 I used cubic tcp variance for the same public server shown as previous.
 
