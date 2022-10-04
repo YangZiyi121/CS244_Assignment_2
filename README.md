@@ -313,5 +313,5 @@ I used cubic tcp variance for the same public server shown as previous.
 
 
 
-The green line are received packets, the blue block are captrued sending packets and the yelloe line is sequence number that already acked.
+The green line are received packets, the blue block are captrued sending packets and the yellow line is sequence number that already acked.
 
