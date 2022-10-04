@@ -305,13 +305,13 @@ The BBR delay and throughput figure is shown as follows.
 Loss-based congestion control fills buffer, achieves full throughput, but induces queuing delay. TCP BBR doesn’t fill buffer, estimates bottleneck bandwidth and sends at that rate. TCP BBR operates at the BDP, Also tries to estimate what link RTT is without queueing delay.
 
 <h4>Wireshark experiment</h4>
+I also used **wireshark** for catching tcp packets. Since **iperf** is giving analysis per second, the packet based analysis will be much more precise.
 
-The above experiments are all done in a real-life network environment. From the results, it is able to see the big picture of how all these vairances work. However, because of the noise (other traffics), the **CWnd** changes is not clearly shown. I tried to do the something with a much closed environment from my laptop to workstation. This will involve less hops and the server is private, which makes the network environment cleaner. I also used **wireshark** for catching tcp packets. Since **iperf** is giving analysis per second, the packet based analysis will be much more precise.
+I used cubic tcp variance for the same public server shown as previous.
 
-| Role   | Connection               | OS     | IP            |
-| ------ | ------------------------ | ------ | ------------- |
-| Client | Bridged wired connection | Debian | 10.68.202.231 |
-| Server | Kw61088 workstation      | Ubuntu | 10.72.138.15  |
+![wireshark](images/cubic.png)
 
 
+
+The green line are received packets, the blue block are captrued sending packets and the yelloe line is sequence number that already acked.
 
